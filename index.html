@@ -455,9 +455,11 @@
 
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
             gap: 30px;
             margin-bottom: 50px;
+            grid-auto-rows: minmax(auto, max-content);
+            align-items: start;
         }
 
         .project-card {
@@ -468,6 +470,7 @@
             transition: var(--transition);
             position: relative;
             border: 1px solid var(--border-color);
+            height: auto;
         }
 
         .project-card:hover {
@@ -540,7 +543,8 @@
             font-size: 14px;
             position: relative;
             overflow: hidden;
-            transition: var(--transition);
+            transition: max-height 0.3s ease-out;
+            overflow: hidden;
         }
 
         .project-description.collapsed {
@@ -548,7 +552,8 @@
         }
 
         .project-description.expanded {
-            max-height: none;
+            /* max-height: none; */
+            max-height: 1000px;
         }
 
         .read-more-btn {
@@ -802,6 +807,12 @@
             }
         }
     </style>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script type="text/javascript">
+    (function(){
+        emailjs.init("SmW6PZgH2ijffg0lW");
+    })();
+</script>
 </head>
 <body>
     <button class="theme-toggle" id="themeToggle">🌙</button>
@@ -812,12 +823,11 @@
             <div class="profile-section">
                 <div class="profile-image"></div>
                 <h1 class="name">Emile Iyadukunze</h1>
-                <p class="title">Senior Backend & Full Stack Developer</p>
-                <p class="title">Self-taught full stack developer who is able to realize projects from the ground up. I am well versed in all the key languages and am able to design, code, deploy and adding monitoring tools in an organized and efficient manner.
-                I am able to work well under pressure and adhere to strict deadlines.</p>
+                <p class="title">Backend-focused Full-Stack Developer</p>
+                <p class="title">I specializing in building reliable, scalable, and high-performance server-side systems. I design and implement robust APIs, database architectures, and integrations, while also delivering clean and responsive frontends when needed. I work efficiently under pressure and consistently deliver production-ready solutions from design to deployment and monitoring.</p>
                 <div class="status-badge"><a class="download-cv-btn" href="#contactForm">Available for Hire</a></div>
                 <div class="status-badge">
-                    <a href="https://docs.google.com/document/d/10-9fP9or9Auu_MwsFm2QHaWKWCH6pAVlVZWr8E9-nGE/edit?usp=sharing" target="_blank" class="download-cv-btn">Get CV</a>
+                    <a href="https://docs.google.com/document/d/1LWPNC1AtFEQ-7EAj_riUyjJeUo6F8mVTgWMpn2qYkvk/edit?usp=sharing" target="_blank" class="download-cv-btn">Get CV</a>
                 </div>
             </div>
             
@@ -994,14 +1004,103 @@
             
             <div class="projects-grid">
                 <div class="project-card">
+                    <div class="project-media" data-project="enterprise-wallet">
+                         <img src="https://res.cloudinary.com/dtf3mo1j6/image/upload/v1765448340/WhatsApp_Image_2025-12-11_at_02.13.32_nc9ju7.jpg" alt="Momo transaction" class="project-image active">
+                        <img src="https://res.cloudinary.com/dtf3mo1j6/image/upload/v1765448377/Screen_Shot_2025-12-11_at_11.16.59_tedmyq.png" alt="Wallet transactions" class="project-image">
+                        <img src="https://res.cloudinary.com/dtf3mo1j6/image/upload/v1765448340/WhatsApp_Image_2025-12-11_at_02.13.32_1_our9f0.jpg" alt="Payment Processing" class="project-image">
+                        <img src="https://res.cloudinary.com/dtf3mo1j6/image/upload/v1765448340/WhatsApp_Image_2025-12-11_at_02.13.33_1_mnz0gj.jpg" alt="Token payment" class="project-image">
+                        <img src="https://res.cloudinary.com/dtf3mo1j6/image/upload/v1765448378/Screen_Shot_2025-12-11_at_11.16.47_p9a8tk.png" alt="wallet management" class="project-image">
+                        <div class="media-indicators">
+                            <div class="indicator active"></div>
+                            <div class="indicator"></div>
+                            <div class="indicator"></div>
+                            <div class="indicator"></div>
+                            <div class="indicator"></div>
+
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3 class="project-title">Wallet System</h3>
+                            <span class="project-date">2025</span>
+                        </div>
+                        <div class="project-description collapsed">
+                            Architected and developed a comprehensive enterprise wallet backend system managing transactions, balances, transfers, and payment processing with 99.9% uptime. The system seamlessly coordinates with frontend (React) and mobile app teams for unified API integration across multiple platforms. Features include real-time balance updates, transaction history tracking, multi-currency support, automated reconciliation, and comprehensive security measures. Built with microservices architecture to handle high-volume concurrent transactions, the wallet integrates with Momo payment gateways including Aitel,MTN and TNM. Implemented robust fraud detection, KYC verification, and compliance monitoring systems to ensure regulatory adherence and user security.
+                        </div>
+                        <button class="read-more-btn">Read More</button>
+                        <div class="project-footer">
+                            <a href="https://winbigmalawi.com/" class="project-link" target="_blank">
+                                View Details →
+                            </a>
+                            <div class="project-tech">
+                                <span class="tech-tag">Golang</span>
+                                <span class="tech-tag">NestJS</span>
+                                <span class="tech-tag">PostgreSQL</span>
+                                <span class="tech-tag">Redis</span>
+                                <span class="tech-tag">Kafka</span>
+                                <span class="tech-tag">Microservices</span>
+                                <span class="tech-tag">React</span>
+                                <span class="tech-tag">Mobile APIs</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-media" data-project="tenga-promo">
+                        <!-- Cloudinary Video Player -->
+                        <video id="eNotiVideo" class="cloudinary-video-player videotoplay1 project-video active" muted loop></video>
+                        <video id="tengaPromoVideo" class="cloudinary-video-player videotoplay2 project-video" muted loop></video>
+                        <img src="https://res.cloudinary.com/dtf3mo1j6/image/upload/v1754780475/Screen_Shot_2025-08-09_at_23.32.28_po1zty.png" alt="TengaPromo Platform" class="project-image">
+                    
+                        <div class="media-indicators">
+                            <div class="indicator active"></div>
+                            <div class="indicator"></div>
+                            <div class="indicator"></div>
+                            <!-- <div class="indicator"></div>
+                            <div class="indicator"></div> -->
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3 class="project-title">TengaPromo - Raffle and eNoti USSD</h3>
+                            <span class="project-date">2025</span>
+                        </div>
+                        <div class="project-description collapsed">
+                            Developed the backend and USSD system for TengaPromo, a trending raffle platform managing different microservice backend deployments. The system processes user payments for playing different prizes, manages messaging to winners and draws, and features a user-friendly USSD interface available 24/7 with almost 0% downtime. Users can play for products, receive prizes, transfer prize balances to mobile money, and use credits to pay for different services like electricity, and water bills. The platform handles high concurrent users and real-time transaction processing with robust fraud detection and automated prize distribution systems.
+                        </div>
+                        <button class="read-more-btn">Read More</button>
+                        <div class="project-footer">
+                            <a href="https://tenga.rw/en/terms" class="project-link" target="_blank">
+                                View Details →
+                            </a>
+                            <div class="project-tech">
+                                <span class="tech-tag">USSD</span>
+                                <span class="tech-tag">Golang</span>
+                                <span class="tech-tag">Spring Boot</span>
+                                <span class="tech-tag">Microservices</span>
+                                <span class="tech-tag">PostgreSQL</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                     <div class="project-card">
                     <div class="project-media" data-project="fitbase-gym">
                         <img src="https://res.cloudinary.com/dtf3mo1j6/image/upload/v1754782529/Screen_Shot_2025-08-09_at_21.52.54_kviubn.png" alt="Fitbase Dashboard" class="project-image active">
                         <img src="https://res.cloudinary.com/dtf3mo1j6/image/upload/v1754782530/Screen_Shot_2025-08-09_at_22.30.32_rh1f1w.png" alt="Member Check-in" class="project-image">
                         <img src="https://res.cloudinary.com/dtf3mo1j6/image/upload/v1754783228/Screen_Shot_2025-08-09_at_22.34.08_b4b6zd.png" alt="Institutional Management" class="project-image">
                         <img src="https://res.cloudinary.com/dtf3mo1j6/image/upload/v1754783611/Screen_Shot_2025-08-10_at_01.52.06_jofgus.png" alt="Payment Integration" class="project-image">
                         <img src="https://res.cloudinary.com/dtf3mo1j6/image/upload/v1754782530/Screen_Shot_2025-08-09_at_22.20.06_rop7se.png" alt="client dashboard" class="project-image">
+                        <!-- ------- -->
+                        <img src="https://res.cloudinary.com/dtf3mo1j6/image/upload/v1765448340/WhatsApp_Image_2025-12-11_at_02.13.31_1_zricn4.jpg" alt="client mobile app" class="project-image">
+                        <img src="https://res.cloudinary.com/dtf3mo1j6/image/upload/v1765448340/WhatsApp_Image_2025-12-11_at_02.13.31_appjff.jpg" alt="client gym class booking" class="project-image">
+                        <img src="https://res.cloudinary.com/dtf3mo1j6/image/upload/v1765448340/WhatsApp_Image_2025-12-11_at_02.13.30_ioifae.jpg" alt="client memberships managment on app" class="project-image">
+
                         <div class="media-indicators">
                             <div class="indicator active"></div>
+                            <div class="indicator"></div>
+                            <div class="indicator"></div>
+                            <div class="indicator"></div>
                             <div class="indicator"></div>
                             <div class="indicator"></div>
                             <div class="indicator"></div>
@@ -1029,44 +1128,6 @@
                                 <span class="tech-tag">Redis</span>
                                 <span class="tech-tag">Docker</span>
                                 <span class="tech-tag">ci/cd</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="project-card">
-                    <div class="project-media" data-project="tenga-promo">
-                        <!-- Cloudinary Video Player -->
-                        <video id="tengaPromoVideo" class="cloudinary-video-player project-video active" muted loop></video>
-                        <img src="https://res.cloudinary.com/dtf3mo1j6/image/upload/v1754780475/Screen_Shot_2025-08-09_at_23.32.28_po1zty.png" alt="TengaPromo Platform" class="project-image">
-                    
-                        <div class="media-indicators">
-                            <div class="indicator active"></div>
-                            <div class="indicator"></div>
-                            <!-- <div class="indicator"></div>
-                            <div class="indicator"></div>
-                            <div class="indicator"></div> -->
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <div class="project-header">
-                            <h3 class="project-title">TengaPromo - Raffle</h3>
-                            <span class="project-date">2025</span>
-                        </div>
-                        <div class="project-description collapsed">
-                            Developed the backend and USSD system for TengaPromo, a trending raffle platform managing different microservice backend deployments. The system processes user payments for playing different prizes, manages messaging to winners and draws, and features a user-friendly USSD interface available 24/7 with almost 0% downtime. Users can play for products, receive prizes, transfer prize balances to mobile money, and use credits to pay for different services like electricity, and water bills. The platform handles high concurrent users and real-time transaction processing with robust fraud detection and automated prize distribution systems.
-                        </div>
-                        <button class="read-more-btn">Read More</button>
-                        <div class="project-footer">
-                            <a href="https://tenga.rw/en/terms" class="project-link" target="_blank">
-                                View Details →
-                            </a>
-                            <div class="project-tech">
-                                <span class="tech-tag">USSD</span>
-                                <span class="tech-tag">Golang</span>
-                                <span class="tech-tag">Spring Boot</span>
-                                <span class="tech-tag">Microservices</span>
-                                <span class="tech-tag">PostgreSQL</span>
                             </div>
                         </div>
                     </div>
@@ -1256,6 +1317,47 @@
                                 View Details →
                             </a>
                             <div class="project-tech">
+                                <span class="tech-tag">React</span>
+                                <span class="tech-tag">TypeScript</span>
+                                <span class="tech-tag">Node.js</span>
+                                <span class="tech-tag">NestJS</span>
+                                <span class="tech-tag">PostgreSQL</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                 <div class="project-card">
+                    <div class="project-media" data-project="scalable-backend">
+                        <img src="https://res.cloudinary.com/dtf3mo1j6/image/upload/v1765449654/Screen_Shot_2025-12-11_at_12.38.35_wnomsw.png" alt="ekorana hero" class="project-image active">
+                        <img src="https://res.cloudinary.com/dtf3mo1j6/image/upload/v1765449647/Screen_Shot_2025-12-11_at_12.39.05_d5ypaq.png" alt="ekorana carrier" class="project-image">
+                        <img src="https://res.cloudinary.com/dtf3mo1j6/image/upload/v1765449653/Screen_Shot_2025-12-11_at_12.40.08_aqhkoz.png" alt="ekorana blog page" class="project-image">
+                        <div class="media-indicators">
+                            <div class="indicator active"></div>
+                            <div class="indicator"></div>
+                            <div class="indicator"></div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3 class="project-title">Ekorana website</h3>
+                            <span class="project-date">2025</span>
+                        </div>
+                        <div class="project-description collapsed">
+                            <p></p>
+                                A modern, responsive website built for EKORANA to showcase its software development and staffing services. I developed both the frontend and backend, implemented contact and quote request forms, and optimized the platform for performance and usability.
+                            </p>
+                        </div>
+                        <button class="read-more-btn">Read More</button>
+                        <div class="project-footer">
+                            <a href="https://www.ekorana.com" class="project-link" target="_blank">
+                                View Details →
+                            </a>
+                           <div class="project-tech">
+                                <span class="tech-tag">React</span>
+                                <span class="tech-tag">TypeScript</span>
+                                <span class="tech-tag">Node.js</span>
+                                <span class="tech-tag">NestJS</span>
+                                <span class="tech-tag">PostgreSQL</span>
                             </div>
                         </div>
                     </div>
@@ -1299,6 +1401,27 @@
     <script src="https://unpkg.com/cloudinary-video-player/dist/cld-video-player.min.js"></script>
 
     <script>
+        // Add this to your existing JavaScript code (after the theme toggle initialization)
+
+// Read More/Read Less functionality
+document.querySelectorAll('.read-more-btn').forEach(button => {
+    button.addEventListener('click', function() {
+        const description = this.previousElementSibling;
+        const isCollapsed = description.classList.contains('collapsed');
+        
+        if (isCollapsed) {
+            // Expand
+            description.classList.remove('collapsed');
+            description.classList.add('expanded');
+            this.textContent = 'Read Less';
+        } else {
+            // Collapse
+            description.classList.remove('expanded');
+            description.classList.add('collapsed');
+            this.textContent = 'Read More';
+        }
+    });
+});
         // Initialize Cloudinary Video Player for TengaPromo
         const tengaPromoPlayer = cloudinary.videoPlayer('tengaPromoVideo', {
             cloud_name: 'dtf3mo1j6',
@@ -1320,7 +1443,25 @@
                 }
             ]
         });
-
+const eNotiVideo = cloudinary.videoPlayer('eNotiVideo', {
+            cloud_name: 'dtf3mo1j6',
+            autoplay: false,
+            muted: true,
+            loop: true,
+            controls: false,
+            fluid: true
+        });
+        eNotiVideo.source('New_to_eNotiHere_s_everything_you_need_to_know_about_your_brand-new_state_of_the_art_digital_Wal_ihbrpj', {
+            transformation: [
+                {
+                    width: 800,
+                    height: 500,
+                    crop: 'fill',
+                    quality: 'auto:best',
+                    fetch_format: 'auto'
+                }
+            ]
+        });
         // Theme Toggle
         const themeToggle = document.getElementById('themeToggle');
         const html = document.documentElement;
@@ -1345,47 +1486,43 @@
             }
         });
 
-        // Form submission handler
-        document.getElementById('contactForm').addEventListener('submit', async function(event) {
-            event.preventDefault();
-            
-            const submitBtn = this.querySelector('.submit-btn');
-            const originalBtnText = submitBtn.textContent;
-            submitBtn.textContent = 'Sending...';
-            submitBtn.disabled = true;
-            
-            const formData = new FormData(this);
-            const data = {
-                fullName: formData.get('fullName'),
-                email: formData.get('email'),
-                phone: formData.get('phone'),
-                message: formData.get('message')
-            };
-
-            try {
-                // Simulate form submission (replace with actual endpoint)
-                await new Promise(resolve => setTimeout(resolve, 2000));
-                alert('Thank you! Your message has been sent successfully. I will get back to you soon.');
-                this.reset();
-            } catch (error) {
-                console.error('Error:', error);
-                alert('Failed to send message. Please try again later or contact me directly.');
-            } finally {
-                submitBtn.textContent = originalBtnText;
-                submitBtn.disabled = false;
-            }
+// Form submission handler with EmailJS
+document.getElementById('contactForm').addEventListener('submit', async function(event) {
+    event.preventDefault();
+    
+    const submitBtn = this.querySelector('.submit-btn');
+    const originalBtnText = submitBtn.textContent;
+    submitBtn.textContent = 'Sending...';
+    submitBtn.disabled = true;
+    
+    const formData = new FormData(this);
+    
+    // EmailJS configuration - REPLACE THESE WITH YOUR ACTUAL VALUES
+    const serviceID = 'portfolio_emile'; // e.g., 'service_xxxxxxx'
+    const templateID = 'template_portfolio_cntct'; // e.g., 'template_xxxxxxx'
+    
+    const templateParams = {
+        from_name: formData.get('fullName'),
+        from_email: formData.get('email'),
+        phone: formData.get('phone') || 'Not provided',
+        message: formData.get('message'),
+        to_email: 'iyaemile4@gmail.com'
+    };
+    
+    emailjs.send(serviceID, templateID, templateParams)
+        .then(function(response) {
+            console.log('SUCCESS!', response.status, response.text);
+            alert('✅ Thank you! Your message has been sent successfully. I will get back to you soon.');
+            document.getElementById('contactForm').reset();
+        }, function(error) {
+            console.log('FAILED...', error);
+            alert('❌ Failed to send message. Please try again or email me directly at iyaemile4@gmail.com');
+        })
+        .finally(() => {
+            submitBtn.textContent = originalBtnText;
+            submitBtn.disabled = false;
         });
-
-        // Read More Buttons
-        const readMoreBtns = document.querySelectorAll('.read-more-btn');
-        readMoreBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                const description = btn.previousElementSibling;
-                description.classList.toggle('collapsed');
-                description.classList.toggle('expanded');
-                btn.textContent = description.classList.contains('collapsed') ? 'Read More' : 'Read Less';
-            });
-        });
+});
 
         // Media Sliders for Projects
         document.querySelectorAll('.project-media').forEach(slider => {
@@ -1496,9 +1633,11 @@
             if (activeMedia.tagName === 'VIDEO' || activeMedia.classList.contains('cloudinary-video-player')) {
                 modalImage.style.display = 'none';
                 modalVideo.style.display = 'block';
-                if (activeMedia.classList.contains('cloudinary-video-player')) {
+                if (activeMedia.classList.contains('videotoplay1')) {
                     // Handle Cloudinary video
-                    modalVideo.src = 'https://res.cloudinary.com/dtf3mo1j6/video/upload/v1754493039/AQOzAOqFWhAa3135SmwY4owjb0JUhvObEgtbDV3sTvnic_f9khI5VLxXK1f_dKTX44kpiyN0rOsPdTQAn1WsQ-maFMA0NqvT9oJqcbFWybsNdA_c9fwoe.mp4';
+                   modalVideo.src = 'https://res.cloudinary.com/dtf3mo1j6/video/upload/v1765445036/New_to_eNotiHere_s_everything_you_need_to_know_about_your_brand-new_state_of_the_art_digital_Wal_ihbrpj.mp4';
+                } else if(activeMedia.classList.contains('videotoplay2')) {
+                     modalVideo.src = 'https://res.cloudinary.com/dtf3mo1j6/video/upload/v1754493039/AQOzAOqFWhAa3135SmwY4owjb0JUhvObEgtbDV3sTvnic_f9khI5VLxXK1f_dKTX44kpiyN0rOsPdTQAn1WsQ-maFMA0NqvT9oJqcbFWybsNdA_c9fwoe.mp4';
                 } else {
                     modalVideo.src = activeMedia.src;
                 }
